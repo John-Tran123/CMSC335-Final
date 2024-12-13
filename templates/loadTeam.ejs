@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Load a Team</h1>
+        <form action="/loadTeam" method="POST">
+            <label for="teamDropdown">Select Team:</label>
+            <select id="teamDropdown" name="selectedTeam" required>
+                <option value="" disabled selected>Select a team</option>
+                <% teams.forEach(team => { %>
+                    <option value="<%= team.name %>"><%= team.name %></option>
+                <% }); %>
+            </select>
+            <button type="submit">Load Team</button>
+        </form>
+        <div class="nav-buttons">
+            <a href="/">Home</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Team Roster</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Team Roster</h1>
+        <p><strong>Team Name:</strong> <%= team.name %></p>
+        <p><strong>City:</strong> <%= team.city %></p>
+        <p><strong>Mascot:</strong> <%= team.mascot %></p>
+
+        <% if (players && players.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Height</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% players.forEach(player => { %>
+                        <tr>
+                            <td><%= player.firstName %> <%= player.lastName %></td>
+                            <td><%= player.age || 'N/A' %></td>
+                            <td><%= player.height || 'N/A' %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No players have been added to this team yet.</p>
+        <% } %>
+
+        <a href="/">Home</a>
+    </div>
+</body>
+</html>

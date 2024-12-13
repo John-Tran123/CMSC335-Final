@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Player Details</title>
+</head>
+<body>
+    <h1>Player Details</h1>
+    <ul>
+        <% players.forEach(player => { %>
+            <li>
+                <strong>Name:</strong> <%= player.firstName %> <%= player.lastName %><br>
+                <strong>Age:</strong> <%= player.age %><br>
+                <strong>Height:</strong> <%= player.height %><br>
+                <strong>Team:</strong> <%= player.teamName %> - <%= player.teamCity %> - <%= player.teamMascot %><br>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/">Home</a>
+</body>
+</html>

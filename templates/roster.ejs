@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+
+    <title>Team Roster</title>
+</head>
+<body>
+    <h1>Team Roster</h1>
+    
+    <!-- Display team details -->
+    <div>
+        <p><strong>Team Name:</strong> <%= team.name %></p>
+        <p><strong>City:</strong> <%= team.city %></p>
+        <p><strong>Mascot:</strong> <%= team.mascot %></p>
+    </div>
+
+    <!-- Display player roster -->
+    <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Height</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (team.players && team.players.length > 0) { %>
+                <% team.players.forEach(player => { %>
+                    <tr>
+                        <td><%= player.firstName %></td>
+                        <td><%= player.lastName %></td>
+                        <td><%= player.age %></td>
+                        <td><%= player.height %></td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td colspan="4">No players added to the team roster yet.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>
